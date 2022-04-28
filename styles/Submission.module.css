@@ -1,0 +1,34 @@
+.submissionTable {
+  padding-bottom: 25%;
+}
+.subTabContainer {
+  height: 500px;
+  overflow: scroll !important;
+}
+@media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 1024px) {
+  .submissionTable {
+    padding-bottom: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .submissionTable {
+    padding-bottom: 60%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .submissionTable {
+    padding-bottom: 100%;
+  }
+}
+@media screen and (max-width: 376px) {
+  .submissionTable {
+    padding-bottom: 120%;
+  }
+}
+@media screen and (max-width: 321px) {
+  .submissionTable {
+    padding-bottom: 160%;
+  }
+}

@@ -1,0 +1,52 @@
+.cardGroup {
+  padding-bottom: 25%;
+  margin-top: 5%;
+}
+.footerSchoolName {
+  font-size: 40px;
+}
+.submissionTable {
+  padding-bottom: 20%;
+}
+@media screen and (max-width: 1440px) {
+  .footerSchoolAddress {
+    font-size: 14px;
+  }
+  .footerSchoolName {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .cardGroup {
+    padding-bottom: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cardGroup {
+    padding-bottom: 60%;
+  }
+  .userAvatar {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .cardGroup {
+    padding-bottom: 110%;
+  }
+  .footerSchoolAddress {
+    font-size: 10px;
+  }
+  .footerSchoolName {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 376px) {
+  .cardGroup {
+    padding-bottom: 130%;
+  }
+}
+@media screen and (max-width: 321px) {
+  .cardGroup {
+    padding-bottom: 170%;
+  }
+}

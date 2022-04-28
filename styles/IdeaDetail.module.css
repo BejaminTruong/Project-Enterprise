@@ -1,0 +1,48 @@
+.ideaDetailTable {
+  padding-bottom: 25%;
+}
+.ideaReaction {
+  max-width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.ideaSendComment input {
+  width: 50%;
+}
+@media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 1024px) {
+  .ideaDetailTable {
+    padding-bottom: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .ideaDetailTable {
+    padding-bottom: 60%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .ideaDetailTable {
+    padding-bottom: 100%;
+  }
+  .ideaReaction {
+    max-width: 100%;
+  }
+  .ideaSendComment {
+    flex-wrap: wrap;
+  }
+  .ideaSendComment input {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 376px) {
+  .ideaDetailTable {
+    padding-bottom: 120%;
+  }
+}
+@media screen and (max-width: 321px) {
+  .ideaDetailTable {
+    padding-bottom: 160%;
+  }
+}

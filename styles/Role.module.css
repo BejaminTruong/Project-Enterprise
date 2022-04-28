@@ -1,0 +1,34 @@
+.roleTable {
+  padding-bottom: 25%;
+}
+.roleTabContainer {
+  height: 500px;
+  overflow: scroll !important;
+}
+@media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 1024px) {
+  .roleTable {
+    padding-bottom: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .roleTable {
+    padding-bottom: 60%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .roleTable {
+    padding-bottom: 100%;
+  }
+}
+@media screen and (max-width: 376px) {
+  .roleTable {
+    padding-bottom: 120%;
+  }
+}
+@media screen and (max-width: 321px) {
+  .roleTable {
+    padding-bottom: 160%;
+  }
+}

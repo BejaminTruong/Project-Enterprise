@@ -1,0 +1,46 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(() => {
+var exports = {};
+exports.id = "pages/api/ideas";
+exports.ids = ["pages/api/ideas"];
+exports.modules = {
+
+/***/ "@prisma/client":
+/*!*********************************!*\
+  !*** external "@prisma/client" ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = require("@prisma/client");
+
+/***/ }),
+
+/***/ "(api)/./pages/api/ideas/index.js":
+/*!**********************************!*\
+  !*** ./pages/api/ideas/index.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ ideaList)\n/* harmony export */ });\n/* harmony import */ var _prisma_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @prisma/client */ \"@prisma/client\");\n/* harmony import */ var _prisma_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_prisma_client__WEBPACK_IMPORTED_MODULE_0__);\n\nconst prisma = new _prisma_client__WEBPACK_IMPORTED_MODULE_0__.PrismaClient();\nasync function ideaList(req, res) {\n    try {\n        if (req.method === \"GET\") {\n            if (req.query.id) {\n                const foundedIdea = await prisma.idea.findFirst({\n                    where: {\n                        id: +req.query.id,\n                        deleted: false\n                    },\n                    include: {\n                        user: {\n                            select: {\n                                fullName: true\n                            }\n                        },\n                        category: {\n                            select: {\n                                name: true\n                            }\n                        },\n                        submission: {\n                            select: {\n                                finalClosureDate: true\n                            }\n                        }\n                    }\n                });\n                if (!foundedIdea) return res.status(400).send({\n                    message: \"Idea not found!\"\n                });\n                return res.status(200).send(foundedIdea);\n            }\n            const foundedIdeas = await prisma.idea.findMany({\n                where: {\n                    deleted: false\n                },\n                include: {\n                    user: {\n                        select: {\n                            fullName: true\n                        }\n                    },\n                    category: {\n                        select: {\n                            name: true\n                        }\n                    },\n                    submission: {\n                        select: {\n                            finalClosureDate: true\n                        }\n                    }\n                }\n            });\n            if (foundedIdeas.length < 1) return res.status(200).send({\n                message: \"Ideas not found\"\n            });\n            res.status(200).send(foundedIdeas);\n        }\n    } catch (error) {\n        res.status(500).send(error);\n    }\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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Li9wYWdlcy9hcGkvaWRlYXMvaW5kZXguanM/MDIwOSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBQcmlzbWFDbGllbnQgfSBmcm9tIFwiQHByaXNtYS9jbGllbnRcIjtcclxuY29uc3QgcHJpc21hID0gbmV3IFByaXNtYUNsaWVudCgpO1xyXG5leHBvcnQgZGVmYXVsdCBhc3luYyBmdW5jdGlvbiBpZGVhTGlzdChyZXEsIHJlcykge1xyXG4gIHRyeSB7XHJcbiAgICBpZiAocmVxLm1ldGhvZCA9PT0gXCJHRVRcIikge1xyXG4gICAgICBpZiAocmVxLnF1ZXJ5LmlkKSB7XHJcbiAgICAgICAgY29uc3QgZm91bmRlZElkZWEgPSBhd2FpdCBwcmlzbWEuaWRlYS5maW5kRmlyc3Qoe1xyXG4gICAgICAgICAgd2hlcmU6IHtcclxuICAgICAgICAgICAgaWQ6ICtyZXEucXVlcnkuaWQsXHJcbiAgICAgICAgICAgIGRlbGV0ZWQ6IGZhbHNlLFxyXG4gICAgICAgICAgfSxcclxuICAgICAgICAgIGluY2x1ZGU6IHtcclxuICAgICAgICAgICAgdXNlcjogeyBzZWxlY3Q6IHsgZnVsbE5hbWU6IHRydWUgfSB9LFxyXG4gICAgICAgICAgICBjYXRlZ29yeTogeyBzZWxlY3Q6IHsgbmFtZTogdHJ1ZSB9IH0sXHJcbiAgICAgICAgICAgIHN1Ym1pc3Npb246IHsgc2VsZWN0OiB7IGZpbmFsQ2xvc3VyZURhdGU6IHRydWUgfSB9LFxyXG4gICAgICAgICAgfSxcclxuICAgICAgICB9KTtcclxuICAgICAgICBpZiAoIWZvdW5kZWRJZGVhKVxyXG4gICAgICAgICAgcmV0dXJuIHJlcy5zdGF0dXMoNDAwKS5zZW5kKHsgbWVzc2FnZTogXCJJZGVhIG5vdCBmb3VuZCFcIiB9KTtcclxuICAgICAgICByZXR1cm4gcmVzLnN0YXR1cygyMDApLnNlbmQoZm91bmRlZElkZWEpO1xyXG4gICAgICB9XHJcbiAgICAgIGNvbnN0IGZvdW5kZWRJZGVhcyA9IGF3YWl0IHByaXNtYS5pZGVhLmZpbmRNYW55KHtcclxuICAgICAgICB3aGVyZTogeyBkZWxldGVkOiBmYWxzZSB9LFxyXG4gICAgICAgIGluY2x1ZGU6IHtcclxuICAgICAgICAgIHVzZXI6IHsgc2VsZWN0OiB7IGZ1bGxOYW1lOiB0cnVlIH0gfSxcclxuICAgICAgICAgIGNhdGVnb3J5OiB7IHNlbGVjdDogeyBuYW1lOiB0cnVlIH0gfSxcclxuICAgICAgICAgIHN1Ym1pc3Npb246IHsgc2VsZWN0OiB7IGZpbmFsQ2xvc3VyZURhdGU6IHRydWUgfSB9LFxyXG4gICAgICAgIH0sXHJcbiAgICAgIH0pO1xyXG4gICAgICBpZiAoZm91bmRlZElkZWFzLmxlbmd0aCA8IDEpXHJcbiAgICAgICAgcmV0dXJuIHJlcy5zdGF0dXMoMjAwKS5zZW5kKHsgbWVzc2FnZTogXCJJZGVhcyBub3QgZm91bmRcIiB9KTtcclxuICAgICAgcmVzLnN0YXR1cygyMDApLnNlbmQoZm91bmRlZElkZWFzKTtcclxuICAgIH1cclxuICB9IGNhdGNoIChlcnJvcikge1xyXG4gICAgcmVzLnN0YXR1cyg1MDApLnNlbmQoZXJyb3IpO1xyXG4gIH1cclxufVxyXG4iXSwibmFtZXMiOlsiUHJpc21hQ2xpZW50IiwicHJpc21hIiwiaWRlYUxpc3QiLCJyZXEiLCJyZXMiLCJtZXRob2QiLCJxdWVyeSIsImlkIiwiZm91bmRlZElkZWEiLCJpZGVhIiwiZmluZEZpcnN0Iiwid2hlcmUiLCJkZWxldGVkIiwiaW5jbHVkZSIsInVzZXIiLCJzZWxlY3QiLCJmdWxsTmFtZSIsImNhdGVnb3J5IiwibmFtZSIsInN1Ym1pc3Npb24iLCJmaW5hbENsb3N1cmVEYXRlIiwic3RhdHVzIiwic2VuZCIsIm1lc3NhZ2UiLCJmb3VuZGVkSWRlYXMiLCJmaW5kTWFueSIsImxlbmd0aCIsImVycm9yIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./pages/api/ideas/index.js\n");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../webpack-api-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/ideas/index.js"));
+module.exports = __webpack_exports__;
+
+})();
