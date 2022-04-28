@@ -2,18 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/": "pages/index.js",
-  "/submissions/[id]": "pages/submissions/[id].js",
-  "/api/categories": "pages/api/categories.js",
-  "/api/submissions/getIdeas/[id]": "pages/api/submissions/getIdeas/[id].js",
-  "/submissions": "pages/submissions.js",
-  "/api/submissions": "pages/api/submissions.js",
-  "/api/users": "pages/api/users.js",
-  "/auth/signin": "pages/auth/signin.js",
-  "/api/views/create": "pages/api/views/create.js",
-  "/submissions/ideas/[id]": "pages/submissions/ideas/[id].js",
+  "/api/ideas/getComments/[id]": "pages/api/ideas/getComments/[id].js",
   "/api/ideas": "pages/api/ideas.js",
   "/api/ideas/getReactions/[...slug]": "pages/api/ideas/getReactions/[...slug].js",
-  "/api/ideas/getComments/[id]": "pages/api/ideas/getComments/[id].js"
+  "/api/comments/create": "pages/api/comments/create.js",
+  "/submissions/ideas/[id]": "pages/submissions/ideas/[id].js",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js"
 }

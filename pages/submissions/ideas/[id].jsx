@@ -20,6 +20,7 @@ import { Icon } from "@chakra-ui/react";
 import { MdThumbUpOffAlt, MdThumbDownOffAlt } from "react-icons/md";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
+import emailjs from "@emailjs/browser";
 import styles from "../../../styles/IdeaDetail.module.css";
 const Ideas = () => {
   const router = useRouter();
@@ -82,6 +83,24 @@ const Ideas = () => {
       ideaId: ideaData.id,
       anonymous: checked,
     });
+    let templateParams = {
+      to_email: ideaData.user.email,
+      from_name: "FPT Greenwich CMS test",
+      to_name: ideaData.user.fullName,
+      message: "Someone just commented on your idea",
+    };
+    try {
+      const result = await emailjs.send(
+        "service_2ivd7jg",
+        "template_8sgwiur",
+        templateParams,
+        "DKM5g_ZhMdSbq62O2"
+      );
+      console.log(result.text);
+    } catch (error) {
+      console.log(error.text);
+      return;
+    }
     fetchCommentData();
     setCmt("");
   };

@@ -1,0 +1,46 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(() => {
+var exports = {};
+exports.id = "pages/api/reactions/create";
+exports.ids = ["pages/api/reactions/create"];
+exports.modules = {
+
+/***/ "@prisma/client":
+/*!*********************************!*\
+  !*** external "@prisma/client" ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = require("@prisma/client");
+
+/***/ }),
+
+/***/ "(api)/./pages/api/reactions/create.js":
+/*!***************************************!*\
+  !*** ./pages/api/reactions/create.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ create)\n/* harmony export */ });\n/* harmony import */ var _prisma_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @prisma/client */ \"@prisma/client\");\n/* harmony import */ var _prisma_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_prisma_client__WEBPACK_IMPORTED_MODULE_0__);\n\nconst prisma = new _prisma_client__WEBPACK_IMPORTED_MODULE_0__.PrismaClient();\nasync function create(req, res) {\n    try {\n        let { reaction , userId , ideaId  } = req.body;\n        if (req.method === \"POST\") {\n            if (req.query.id) {\n                const userReaction = await prisma.reaction.findFirst({\n                    where: {\n                        id: +req.query.id,\n                        deleted: false\n                    }\n                });\n                if (!userReaction) {\n                    return res.status(400).send({\n                        message: \"Reaction not found\"\n                    });\n                }\n                if (userReaction.reaction !== null && userReaction.reaction === reaction) {\n                    reaction = null;\n                }\n                const updatedReaction = await prisma.reaction.update({\n                    where: {\n                        id: +req.query.id\n                    },\n                    data: {\n                        reaction\n                    }\n                });\n                return res.status(200).send(updatedReaction);\n            }\n            const foundedReaction = await prisma.reaction.findFirst({\n                where: {\n                    userId,\n                    ideaId,\n                    deleted: false\n                }\n            });\n            if (foundedReaction) return res.status(400).send({\n                message: \"This user already reacted to this idea!\"\n            });\n            const newReaction = await prisma.reaction.create({\n                data: {\n                    reaction,\n                    userId,\n                    ideaId\n                }\n            });\n            res.status(200).send(newReaction);\n        }\n    } catch (error) {\n        res.status(500).send(error);\n    }\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvcmVhY3Rpb25zL2NyZWF0ZS5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBNkM7QUFDN0MsS0FBSyxDQUFDQyxNQUFNLEdBQUcsR0FBRyxDQUFDRCx3REFBWTtBQUNoQixlQUFlRSxNQUFNLENBQUNDLEdBQUcsRUFBRUMsR0FBRyxFQUFFLENBQUM7SUFDOUMsR0FBRyxDQUFDLENBQUM7UUFDSCxHQUFHLENBQUMsQ0FBQyxDQUFDQyxRQUFRLEdBQUVDLE1BQU0sR0FBRUMsTUFBTSxFQUFDLENBQUMsR0FBR0osR0FBRyxDQUFDSyxJQUFJO1FBQzNDLEVBQUUsRUFBRUwsR0FBRyxDQUFDTSxNQUFNLEtBQUssQ0FBTSxPQUFFLENBQUM7WUFDMUIsRUFBRSxFQUFFTixHQUFHLENBQUNPLEtBQUssQ0FBQ0MsRUFBRSxFQUFFLENBQUM7Z0JBQ2pCLEtBQUssQ0FBQ0MsWUFBWSxHQUFHLEtBQUssQ0FBQ1gsTUFBTSxDQUFDSSxRQUFRLENBQUNRLFNBQVMsQ0FBQyxDQUFDO29CQUNwREMsS0FBSyxFQUFFLENBQUM7d0JBQ05ILEVBQUUsR0FBR1IsR0FBRyxDQUFDTyxLQUFLLENBQUNDLEVBQUU7d0JBQ2pCSSxPQUFPLEVBQUUsS0FBSztvQkFDaEIsQ0FBQztnQkFDSCxDQUFDO2dCQUNELEVBQUUsR0FBR0gsWUFBWSxFQUFFLENBQUM7b0JBQ2xCLE1BQU0sQ0FBQ1IsR0FBRyxDQUFDWSxNQUFNLENBQUMsR0FBRyxFQUFFQyxJQUFJLENBQUMsQ0FBQzt3QkFBQ0MsT0FBTyxFQUFFLENBQW9CO29CQUFDLENBQUM7Z0JBQy9ELENBQUM7Z0JBQ0QsRUFBRSxFQUNBTixZQUFZLENBQUNQLFFBQVEsS0FBSyxJQUFJLElBQzlCTyxZQUFZLENBQUNQLFFBQVEsS0FBS0EsUUFBUSxFQUNsQyxDQUFDO29CQUNEQSxRQUFRLEdBQUcsSUFBSTtnQkFDakIsQ0FBQztnQkFDRCxLQUFLLENBQUNjLGVBQWUsR0FBRyxLQUFLLENBQUNsQixNQUFNLENBQUNJLFFBQVEsQ0FBQ2UsTUFBTSxDQUFDLENBQUM7b0JBQ3BETixLQUFLLEVBQUUsQ0FBQzt3QkFBQ0gsRUFBRSxHQUFHUixHQUFHLENBQUNPLEtBQUssQ0FBQ0MsRUFBRTtvQkFBQyxDQUFDO29CQUM1QlUsSUFBSSxFQUFFLENBQUM7d0JBQ0xoQixRQUFRO29CQUNWLENBQUM7Z0JBQ0gsQ0FBQztnQkFDRCxNQUFNLENBQUNELEdBQUcsQ0FBQ1ksTUFBTSxDQUFDLEdBQUcsRUFBRUMsSUFBSSxDQUFDRSxlQUFlO1lBQzdDLENBQUM7WUFDRCxLQUFLLENBQUNHLGVBQWUsR0FBRyxLQUFLLENBQUNyQixNQUFNLENBQUNJLFFBQVEsQ0FBQ1EsU0FBUyxDQUFDLENBQUM7Z0JBQ3ZEQyxLQUFLLEVBQUUsQ0FBQztvQkFDTlIsTUFBTTtvQkFDTkMsTUFBTTtvQkFDTlEsT0FBTyxFQUFFLEtBQUs7Z0JBQ2hCLENBQUM7WUFDSCxDQUFDO1lBQ0QsRUFBRSxFQUFFTyxlQUFlLEVBQ2pCLE1BQU0sQ0FBQ2xCLEdBQUcsQ0FDUFksTUFBTSxDQUFDLEdBQUcsRUFDVkMsSUFBSSxDQUFDLENBQUM7Z0JBQUNDLE9BQU8sRUFBRSxDQUF5QztZQUFDLENBQUM7WUFDaEUsS0FBSyxDQUFDSyxXQUFXLEdBQUcsS0FBSyxDQUFDdEIsTUFBTSxDQUFDSSxRQUFRLENBQUNILE1BQU0sQ0FBQyxDQUFDO2dCQUNoRG1CLElBQUksRUFBRSxDQUFDO29CQUNMaEIsUUFBUTtvQkFDUkMsTUFBTTtvQkFDTkMsTUFBTTtnQkFDUixDQUFDO1lBQ0gsQ0FBQztZQUNESCxHQUFHLENBQUNZLE1BQU0sQ0FBQyxHQUFHLEVBQUVDLElBQUksQ0FBQ00sV0FBVztRQUNsQyxDQUFDO0lBQ0gsQ0FBQyxDQUFDLEtBQUssRUFBRUMsS0FBSyxFQUFFLENBQUM7UUFDZnBCLEdBQUcsQ0FBQ1ksTUFBTSxDQUFDLEdBQUcsRUFBRUMsSUFBSSxDQUFDTyxLQUFLO0lBQzVCLENBQUM7QUFDSCxDQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZW50ZXJwcmlzZS8uL3BhZ2VzL2FwaS9yZWFjdGlvbnMvY3JlYXRlLmpzPzAzODQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUHJpc21hQ2xpZW50IH0gZnJvbSBcIkBwcmlzbWEvY2xpZW50XCI7XHJcbmNvbnN0IHByaXNtYSA9IG5ldyBQcmlzbWFDbGllbnQoKTtcclxuZXhwb3J0IGRlZmF1bHQgYXN5bmMgZnVuY3Rpb24gY3JlYXRlKHJlcSwgcmVzKSB7XHJcbiAgdHJ5IHtcclxuICAgIGxldCB7IHJlYWN0aW9uLCB1c2VySWQsIGlkZWFJZCB9ID0gcmVxLmJvZHk7XHJcbiAgICBpZiAocmVxLm1ldGhvZCA9PT0gXCJQT1NUXCIpIHtcclxuICAgICAgaWYgKHJlcS5xdWVyeS5pZCkge1xyXG4gICAgICAgIGNvbnN0IHVzZXJSZWFjdGlvbiA9IGF3YWl0IHByaXNtYS5yZWFjdGlvbi5maW5kRmlyc3Qoe1xyXG4gICAgICAgICAgd2hlcmU6IHtcclxuICAgICAgICAgICAgaWQ6ICtyZXEucXVlcnkuaWQsXHJcbiAgICAgICAgICAgIGRlbGV0ZWQ6IGZhbHNlLFxyXG4gICAgICAgICAgfSxcclxuICAgICAgICB9KTtcclxuICAgICAgICBpZiAoIXVzZXJSZWFjdGlvbikge1xyXG4gICAgICAgICAgcmV0dXJuIHJlcy5zdGF0dXMoNDAwKS5zZW5kKHsgbWVzc2FnZTogXCJSZWFjdGlvbiBub3QgZm91bmRcIiB9KTtcclxuICAgICAgICB9XHJcbiAgICAgICAgaWYgKFxyXG4gICAgICAgICAgdXNlclJlYWN0aW9uLnJlYWN0aW9uICE9PSBudWxsICYmXHJcbiAgICAgICAgICB1c2VyUmVhY3Rpb24ucmVhY3Rpb24gPT09IHJlYWN0aW9uXHJcbiAgICAgICAgKSB7XHJcbiAgICAgICAgICByZWFjdGlvbiA9IG51bGw7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIGNvbnN0IHVwZGF0ZWRSZWFjdGlvbiA9IGF3YWl0IHByaXNtYS5yZWFjdGlvbi51cGRhdGUoe1xyXG4gICAgICAgICAgd2hlcmU6IHsgaWQ6ICtyZXEucXVlcnkuaWQgfSxcclxuICAgICAgICAgIGRhdGE6IHtcclxuICAgICAgICAgICAgcmVhY3Rpb24sXHJcbiAgICAgICAgICB9LFxyXG4gICAgICAgIH0pO1xyXG4gICAgICAgIHJldHVybiByZXMuc3RhdHVzKDIwMCkuc2VuZCh1cGRhdGVkUmVhY3Rpb24pO1xyXG4gICAgICB9XHJcbiAgICAgIGNvbnN0IGZvdW5kZWRSZWFjdGlvbiA9IGF3YWl0IHByaXNtYS5yZWFjdGlvbi5maW5kRmlyc3Qoe1xyXG4gICAgICAgIHdoZXJlOiB7XHJcbiAgICAgICAgICB1c2VySWQsXHJcbiAgICAgICAgICBpZGVhSWQsXHJcbiAgICAgICAgICBkZWxldGVkOiBmYWxzZSxcclxuICAgICAgICB9LFxyXG4gICAgICB9KTtcclxuICAgICAgaWYgKGZvdW5kZWRSZWFjdGlvbilcclxuICAgICAgICByZXR1cm4gcmVzXHJcbiAgICAgICAgICAuc3RhdHVzKDQwMClcclxuICAgICAgICAgIC5zZW5kKHsgbWVzc2FnZTogXCJUaGlzIHVzZXIgYWxyZWFkeSByZWFjdGVkIHRvIHRoaXMgaWRlYSFcIiB9KTtcclxuICAgICAgY29uc3QgbmV3UmVhY3Rpb24gPSBhd2FpdCBwcmlzbWEucmVhY3Rpb24uY3JlYXRlKHtcclxuICAgICAgICBkYXRhOiB7XHJcbiAgICAgICAgICByZWFjdGlvbixcclxuICAgICAgICAgIHVzZXJJZCxcclxuICAgICAgICAgIGlkZWFJZCxcclxuICAgICAgICB9LFxyXG4gICAgICB9KTtcclxuICAgICAgcmVzLnN0YXR1cygyMDApLnNlbmQobmV3UmVhY3Rpb24pO1xyXG4gICAgfVxyXG4gIH0gY2F0Y2ggKGVycm9yKSB7XHJcbiAgICByZXMuc3RhdHVzKDUwMCkuc2VuZChlcnJvcik7XHJcbiAgfVxyXG59XHJcbiJdLCJuYW1lcyI6WyJQcmlzbWFDbGllbnQiLCJwcmlzbWEiLCJjcmVhdGUiLCJyZXEiLCJyZXMiLCJyZWFjdGlvbiIsInVzZXJJZCIsImlkZWFJZCIsImJvZHkiLCJtZXRob2QiLCJxdWVyeSIsImlkIiwidXNlclJlYWN0aW9uIiwiZmluZEZpcnN0Iiwid2hlcmUiLCJkZWxldGVkIiwic3RhdHVzIiwic2VuZCIsIm1lc3NhZ2UiLCJ1cGRhdGVkUmVhY3Rpb24iLCJ1cGRhdGUiLCJkYXRhIiwiZm91bmRlZFJlYWN0aW9uIiwibmV3UmVhY3Rpb24iLCJlcnJvciJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./pages/api/reactions/create.js\n");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../../../webpack-api-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/reactions/create.js"));
+module.exports = __webpack_exports__;
+
+})();

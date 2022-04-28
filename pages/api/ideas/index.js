@@ -10,7 +10,7 @@ export default async function ideaList(req, res) {
             deleted: false,
           },
           include: {
-            user: { select: { fullName: true } },
+            user: { select: { fullName: true, email: true } },
             category: { select: { name: true } },
             submission: { select: { finalClosureDate: true } },
           },
@@ -22,7 +22,7 @@ export default async function ideaList(req, res) {
       const foundedIdeas = await prisma.idea.findMany({
         where: { deleted: false },
         include: {
-          user: { select: { fullName: true } },
+          user: { select: { fullName: true, email: true } },
           category: { select: { name: true } },
           submission: { select: { finalClosureDate: true } },
         },

@@ -1,25 +1,9 @@
 {
   "sortedMiddleware": [
-    "/categories",
-    "/departments",
-    "/roles",
     "/submissions",
-    "/submissions/ideas",
-    "/users"
+    "/submissions/ideas"
   ],
   "clientInfo": [
-    [
-      "/categories",
-      false
-    ],
-    [
-      "/departments",
-      false
-    ],
-    [
-      "/roles",
-      false
-    ],
     [
       "/submissions",
       false
@@ -27,55 +11,9 @@
     [
       "/submissions/ideas",
       false
-    ],
-    [
-      "/users",
-      false
     ]
   ],
   "middleware": {
-    "/users": {
-      "env": [
-        "NEXTAUTH_URL",
-        "NEXTAUTH_SECRET",
-        "VERCEL"
-      ],
-      "files": [
-        "server/middleware-runtime.js",
-        "server/pages/users/_middleware.js"
-      ],
-      "name": "pages/users/_middleware",
-      "page": "/users",
-      "regexp": "^/users(?:(/.*)?)$"
-    },
-    "/departments": {
-      "env": [
-        "NEXTAUTH_URL",
-        "NEXTAUTH_SECRET",
-        "VERCEL"
-      ],
-      "files": [
-        "server/middleware-runtime.js",
-        "server/pages/departments/_middleware.js"
-      ],
-      "name": "pages/departments/_middleware",
-      "page": "/departments",
-      "regexp": "^/departments(?:(/.*)?)$"
-    },
-    "/roles": {
-      "env": [
-        "NEXTAUTH_URL",
-        "NEXTAUTH_SECRET",
-        "VERCEL"
-      ],
-      "files": [
-        "server/middleware-runtime.js",
-        "server/pages/roles/_middleware.js"
-      ],
-      "name": "pages/roles/_middleware",
-      "page": "/roles",
-      "regexp": "^/roles(?:(/.*)?)$"
-    },
     "/submissions": {
       "env": [
         "NEXTAUTH_URL",
@@ -89,20 +27,6 @@
       "name": "pages/submissions/_middleware",
       "page": "/submissions",
       "regexp": "^/submissions(?:(/.*)?)$"
-    },
-    "/categories": {
-      "env": [
-        "NEXTAUTH_URL",
-        "NEXTAUTH_SECRET",
-        "VERCEL"
-      ],
-      "files": [
-        "server/middleware-runtime.js",
-        "server/pages/categories/_middleware.js"
-      ],
-      "name": "pages/categories/_middleware",
-      "page": "/categories",
-      "regexp": "^/categories(?:(/.*)?)$"
     },
     "/submissions/ideas": {
       "env": [
