@@ -35,10 +35,9 @@ export default async function create(req, res) {
           deleted: false,
         },
       });
-      if (foundedReaction)
-        return res
-          .status(400)
-          .send({ message: "This user already reacted to this idea!" });
+      if (foundedReaction) {
+        return res.status(200).send({message: "This user already reacted to this idea!"});
+      }
       const newReaction = await prisma.reaction.create({
         data: {
           reaction,

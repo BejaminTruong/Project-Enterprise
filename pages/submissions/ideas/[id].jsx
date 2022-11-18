@@ -49,10 +49,11 @@ const Ideas = () => {
   };
 
   const fetchReactionData = async () => {
+    setFlag(false)
     const res = await axios.get(
       `/api/ideas/getReactions/${session.user.userId}/${ideaData.id}`
     );
-    if (res.data.message) return setFlag(true);
+    if (res.data.message) return setFlag(true)
     setReacted(res.data);
   };
 

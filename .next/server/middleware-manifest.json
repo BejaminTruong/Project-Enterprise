@@ -1,15 +1,30 @@
 {
   "sortedMiddleware": [
+    "/departments",
+    "/roles",
     "/submissions",
-    "/submissions/ideas"
+    "/submissions/ideas",
+    "/users"
   ],
   "clientInfo": [
+    [
+      "/departments",
+      false
+    ],
+    [
+      "/roles",
+      false
+    ],
     [
       "/submissions",
       false
     ],
     [
       "/submissions/ideas",
+      false
+    ],
+    [
+      "/users",
       false
     ]
   ],
@@ -27,6 +42,48 @@
       "name": "pages/submissions/_middleware",
       "page": "/submissions",
       "regexp": "^/submissions(?:(/.*)?)$"
+    },
+    "/departments": {
+      "env": [
+        "NEXTAUTH_URL",
+        "NEXTAUTH_SECRET",
+        "VERCEL"
+      ],
+      "files": [
+        "server/middleware-runtime.js",
+        "server/pages/departments/_middleware.js"
+      ],
+      "name": "pages/departments/_middleware",
+      "page": "/departments",
+      "regexp": "^/departments(?:(/.*)?)$"
+    },
+    "/roles": {
+      "env": [
+        "NEXTAUTH_URL",
+        "NEXTAUTH_SECRET",
+        "VERCEL"
+      ],
+      "files": [
+        "server/middleware-runtime.js",
+        "server/pages/roles/_middleware.js"
+      ],
+      "name": "pages/roles/_middleware",
+      "page": "/roles",
+      "regexp": "^/roles(?:(/.*)?)$"
+    },
+    "/users": {
+      "env": [
+        "NEXTAUTH_URL",
+        "NEXTAUTH_SECRET",
+        "VERCEL"
+      ],
+      "files": [
+        "server/middleware-runtime.js",
+        "server/pages/users/_middleware.js"
+      ],
+      "name": "pages/users/_middleware",
+      "page": "/users",
+      "regexp": "^/users(?:(/.*)?)$"
     },
     "/submissions/ideas": {
       "env": [
